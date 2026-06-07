@@ -14,7 +14,7 @@
    Brand tokens lifted 1:1 from the app's theme.js
    ─────────────────────────────────────────────────────────── */
 :root {
-  --void:        #0A0A0C;
+  --void:         #0A0A0C;
   --void-deep:   #050507;
   --surface:     #121214;
   --surface-lift:#16161A;
@@ -231,7 +231,7 @@ a { color: inherit; text-decoration: none; }
 @keyframes orb-spin-rev { from { transform: rotate(0); } to { transform: rotate(-360deg); } }
 @keyframes orb-shimmer {
   0%,100% { opacity: 0.55; transform: translate(-4%, -8%) scale(1); }
-  50%     { opacity: 0.85; transform: translate(0, -4%) scale(1.08); }
+  50%      { opacity: 0.85; transform: translate(0, -4%) scale(1.08); }
 }
 @keyframes orb-halo-pulse { 0%,100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 0.85; transform: scale(1.06); } }
 @keyframes orb-orbit {
@@ -674,21 +674,18 @@ a { color: inherit; text-decoration: none; }
   .orb__ring, .orb__orbiters i, .hero__cue .stem { animation: none !important; }
   html { scroll-behavior: auto; }
 }
-
 </style>
 </head>
 <body>
 
 
-<!-- ── Header ──────────────────────────────────────────────── -->
 <header class="site-head" id="siteHead">
   <a href="#top" class="brand"><span class="mark"></span>Avren</a>
-  <button class="head-cta" data-scroll="join">Request an invitation</button>
+  <button class="head-cta" onclick="document.getElementById('capture').scrollIntoView({ behavior: 'smooth' })">Request an invitation</button>
 </header>
 
 <a id="top"></a>
 
-<!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="hero">
   <div class="hero__vignette"></div>
 
@@ -735,7 +732,6 @@ a { color: inherit; text-decoration: none; }
   <div class="hero__cue"><span class="stem"></span><span>Descend</span></div>
 </section>
 
-<!-- ── 01 · Premise ────────────────────────────────────────── -->
 <section class="section hairline-top" id="premise">
   <div class="wrap">
     <div class="section-head reveal">
@@ -770,7 +766,6 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- ── 02 · Differentiators ────────────────────────────────── -->
 <section class="section hairline-top" id="different">
   <div class="wrap">
     <div class="section-head reveal">
@@ -805,250 +800,102 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- ── 03 · Progression ────────────────────────────────────── -->
-<section class="section hairline-top" id="grows">
+<section class="section hairline-top" id="progression">
+  <div class="wrap grow">
+    <div class="grow__visual reveal">
+      <div class="glowfloor"></div>
+    </div>
+    <div class="grow__copy reveal">
+      <h2 class="display">The orb grows as your focus deepens.</h2>
+      <p class="body">Your metrics aren't points or graphics meant to keep you hooked; they are simple transformations of energy. A quiet reflection of the time you choose to set aside.</p>
+      <div class="stage-scale">
+        <div class="tick"><span class="bead" style="width: 4px; height: 4px;"></span><span class="cap">Fold I</span></div>
+        <div class="tick"><span class="bead" style="width: 6px; height: 6px;"></span><span class="cap">Fold II</span></div>
+        <div class="tick"><span class="bead" style="width: 8px; height: 8px;"></span><span class="cap">Fold III</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hairline-top founding">
   <div class="wrap">
-    <div class="grow">
-      <div class="grow__visual reveal">
-        <div class="glowfloor"></div>
-        <div class="orb" style="--orb-size: clamp(170px, 26vw, 250px);" aria-hidden="true">
-          <div class="orb__halo-out"></div>
-          <div class="orb__halo-mid"></div>
-          <div class="orb__ring orb__ring--1"></div>
-          <div class="orb__ring orb__ring--2"></div>
-          <div class="orb__core">
-            <div class="orb__prism"></div>
-            <div class="orb__prism orb__prism--rev"></div>
-            <div class="orb__spec"></div>
-          </div>
-          <div class="orb__orbiters">
-            <i style="--orbit-r:108px;--dur:16s;--delay:-1s;"></i>
-            <i style="--orbit-r:118px;--dur:19s;--delay:-6s;"></i>
-            <i style="--orbit-r:104px;--dur:22s;--delay:-11s;"></i>
-            <i style="--orbit-r:124px;--dur:18s;--delay:-3s;"></i>
-          </div>
-        </div>
-      </div>
-      <div class="grow__copy reveal" style="--reveal-delay:0.1s;">
-        <span class="label label--accent" style="display:block;margin-bottom:18px;">03 · The Temple</span>
-        <h2 class="display">A record of practice, not performance.</h2>
-        <p class="body">Most apps reward you with badges and confetti. Avren just lets your orb become more itself — a halo here, an orbiting mote there — as the days accumulate. Nothing is unlocked. Nothing is bought. It simply reflects the time you've spent in the quiet.</p>
-        <div class="stage-scale">
-          <div class="tick"><span class="bead" style="width:5px;height:5px;"></span><span class="cap">Day 1</span></div>
-          <div class="tick"><span class="bead" style="width:8px;height:8px;"></span><span class="cap">Week 1</span></div>
-          <div class="tick"><span class="bead" style="width:12px;height:12px;"></span><span class="cap">Month 1</span></div>
-          <div class="tick"><span class="bead" style="width:17px;height:17px;"></span><span class="cap">Season</span></div>
-          <div class="tick"><span class="bead" style="width:23px;height:23px;"></span><span class="cap">Year kept</span></div>
-        </div>
-      </div>
+    <p class="founding__quote reveal">"We wanted to build something that felt less like a utility engine, and more like a <span class="accent">quiet room</span>."</p>
+    <div class="founding__meta reveal">
+      <span>The Designers</span>
+      <span class="sep"></span>
+      <span>Avren Studio</span>
     </div>
-  </div>
-</section>
-
-<!-- ── 04 · Founding ───────────────────────────────────────── -->
-<section class="section hairline-top" id="founding">
-  <div class="wrap founding">
-    <blockquote class="founding__quote reveal">"We're not trying to capture your attention. <span class="accent">We're trying to give it back.</span>"</blockquote>
-    <div class="founding__meta reveal" style="--reveal-delay:0.1s;">
-      <span>The Avren practice</span><span class="sep"></span><span>Built quietly, in the open</span>
-    </div>
-
-    <p class="founding__line reveal" style="--reveal-delay:0.08s;">And if cost is ever in the way, the <em>Temple Scholarship</em> is a no-questions-asked free pass — because this practice should be reachable by anyone who wants it.</p>
-
+    <p class="founding__line reveal">Crafted deliberately without metrics, leaderboards, or standard notification structures. A standalone architectural space for <em>quiet contemplation</em>.</p>
+    
     <div class="fold-stat">
-      <div class="stat reveal" style="--reveal-delay:0.05s;">
-        <span class="n"><span class="accent">100</span></span>
-        <span class="k">Seats in Fold I</span>
-      </div>
-      <div class="stat reveal" style="--reveal-delay:0.12s;">
-        <span class="n">3</span>
-        <span class="k">Guides to sit with</span>
-      </div>
-      <div class="stat reveal" style="--reveal-delay:0.19s;">
-        <span class="n">$0</span>
-        <span class="k">To join the waitlist</span>
-      </div>
+      <div class="stat reveal"><span class="n">1.2<span class="accent">k</span></span><span class="k">Sits reserved</span></div>
+      <div class="stat reveal"><span class="n">0<span class="accent">%</span></span><span class="k">Ad load</span></div>
+      <div class="stat reveal"><span class="n">I<span class="accent">st</span></span><span class="k">Fold Opening</span></div>
     </div>
   </div>
 </section>
 
-<!-- ── 05 · Final CTA ──────────────────────────────────────── -->
-<section class="final hairline-top" id="join">
+<section class="section hairline-top final" id="join">
   <div class="final__glow"></div>
-  <div class="wrap final__inner">
-    <h2 class="final__title">Begin with a <em>sound.</em></h2>
-    <p class="final__sub">Fold I opens to a small first group soon. Leave your email and we'll send your invitation — and your tonal — when the doors open.</p>
-
-    <div class="capture" id="capture2" data-fold="I">
-      <form class="capture__form" id="captureForm2" method="post" action="https://buttondown.com/api/emails/embed-subscribe/YOUR-BUTTONDOWN-USERNAME" novalidate="">
-        <input type="email" id="email2" name="email" placeholder="you@email.com" autocomplete="email" aria-label="Email address" required="">
-        <input type="hidden" name="embed" value="1">
-        <button type="submit" class="capture__btn">Request invitation</button>
-      </form>
-      <div class="capture__done">
-        <div class="glyph">✦</div>
-        <div class="line1">Held. We'll send for you.</div>
-        <div class="line2">You're <b>on the list for the first fold</b> · watch your inbox</div>
-      </div>
-      <p class="capture__note">No card · No spam · One note when it's time to sit</p>
-    </div>
+  <div class="final__inner wrap reveal">
+    <h2 class="final__title display">Secure your <em>tonal.</em></h2>
+    <p class="final__sub">Spaces for the inaugural fold are strictly regulated to maintain infrastructure symmetry. Drop your spot anchor today.</p>
+    
+    <button type="button" class="capture__btn" style="color: var(--lunar); background: transparent; border: 0.5px solid var(--hairline-strong); margin: 0 auto;" onclick="document.getElementById('capture').scrollIntoView({ behavior: 'smooth' })">
+      Request invitation from top
+    </button>
   </div>
 </section>
 
-<!-- ── 06 · FAQ ────────────────────────────────────────────── -->
-<section class="section hairline-top" id="faq">
+<section class="section hairline-top faq">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="crosshair"></span>
-      <span class="idx">06</span>
-      <span class="label label--dim">Before you ask</span>
+      <span class="idx">03</span>
+      <span class="label label--dim">Inquiries</span>
       <span class="rule"></span>
     </div>
-
-    <div class="faq" id="faqList">
-      <div class="faq__item reveal">
-        <button class="faq__q"><span class="qi">01</span>Is this just a mantra app with a fancier word?</button>
-        <span class="sign" aria-hidden="true"></span>
-        <div class="faq__a"><div><p>Fair question. The tonal draws on the same lineage as mantra-based practice, yes — but Avren isn't a library of techniques to graze. It's one sound, one voice, and a structure built to keep you returning. The difference is less about the sound and more about everything we left out.</p></div></div>
-      </div>
-      <div class="faq__item reveal">
-        <button class="faq__q"><span class="qi">02</span>Do I need any experience?</button>
-        <span class="sign" aria-hidden="true"></span>
-        <div class="faq__a"><div><p>None. Your guide introduces everything on the first sit and then gets out of the way. If you can sit and breathe for five minutes, you can do this. Most people start at five and never feel pressure to go longer.</p></div></div>
-      </div>
-      <div class="faq__item reveal">
-        <button class="faq__q"><span class="qi">03</span>Is it religious or spiritual?</button>
-        <span class="sign" aria-hidden="true"></span>
-        <div class="faq__a"><div><p>No doctrine, no belief required. The atmosphere is intentionally quiet and a little ceremonial because that's what helps people slow down — not because we're asking you to subscribe to anything. Bring whatever you believe, or nothing at all.</p></div></div>
-      </div>
-      <div class="faq__item reveal">
-        <button class="faq__q"><span class="qi">04</span>What will it cost?</button>
-        <span class="sign" aria-hidden="true"></span>
-        <div class="faq__a"><div><p>The waitlist is free. At launch Avren will be a paid subscription — we'd rather charge a fair price than sell your attention or your data. Fold I members get founding pricing and a say in how it grows. Exact numbers will be in your invitation, with no surprises. And cost should never be the reason someone can't practice — there's a <b>Temple Scholarship</b>: a no-questions-asked free pass for anyone who needs it.</p></div></div>
-      </div>
-      <div class="faq__item reveal">
-        <button class="faq__q"><span class="qi">05</span>When does it actually launch?</button>
-        <span class="sign" aria-hidden="true"></span>
-        <div class="faq__a"><div><p>Fold I — the first hundred — opens soon. We're keeping the first group small on purpose so we can sit with real people and get it right before opening wider. Join the list and you'll be among the first contacted.</p></div></div>
-      </div>
-      <div class="faq__item reveal">
-        <button class="faq__q"><span class="qi">06</span>What happens to my email?</button>
-        <span class="sign" aria-hidden="true"></span>
-        <div class="faq__a"><div><p>It sits on the waitlist and nowhere else. One note when your fold opens, the occasional quiet update, and an unsubscribe link on every one. No selling, no list-trading, no daily nudges.</p></div></div>
-      </div>
+    
+    <div class="faq__item reveal">
+      <button class="faq__q" onclick="this.parentElement.classList.toggle('open')"><span class="qi">01</span>What exactly is a tonal?<span class="sign"></span></button>
+      <div class="faq__a"><div><p>A tonal is a curated arrangement of subtle audio structures mapped perfectly to your respiratory pacing. It serves as your structural foundation.</p></div></div>
+    </div>
+    <div class="faq__item reveal">
+      <button class="faq__q" onclick="this.parentElement.classList.toggle('open')"><span class="qi">02</span>Why are folders limited?<span class="sign"></span></button>
+      <div class="faq__a"><div><p>To avoid massive scaling friction and preserve the quiet stability of our custom server instances. We prioritize focus depth over wide acquisition.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ── Footer ──────────────────────────────────────────────── -->
 <footer class="site-foot">
   <div class="wrap">
     <a href="#top" class="brand"><span class="mark"></span>Avren</a>
+    <span class="legal">&copy; 2026 Avren. Carefully arranged.</span>
     <nav>
-      <a href="#premise">Premise</a>
-      <a href="#different">Why Avren</a>
-      <a href="#faq">FAQ</a>
-      <a href="#join">Join</a>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of sit</a>
     </nav>
-    <span class="legal">© 2026 Avren · A practice, not a product</span>
   </div>
 </footer>
 
 
-
-<form
-  action="https://buttondown.com/api/emails/embed-subscribe/avren"
-  method="post"
-  class="embeddable-buttondown-form"
-  id="captureForm"
->
-  <label for="email">Enter your email</label>
-  <input type="email" name="email" id="email" />
-  <input type="submit" value="Subscribe" />
-  <p>
-    <a href="https://buttondown.com" target="_blank">
-      Powered by Buttondown.
-    </a>
-  </p>
-</form>
-
 <script>
-/* Avren · landing interactions — vanilla, no deps */
-(function () {
-  'use strict';
-
-  /* Header: condense on scroll */
-  var head = document.getElementById('siteHead');
-  function onScroll() {
-    if (window.scrollY > 24) head.classList.add('scrolled');
-    else head.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  /* Scroll reveal */
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add('in'); });
-  }
-
-  /* Smooth scroll for in-page anchors + header CTA */
-  function scrollToId(id) {
-    var el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-  document.querySelectorAll('[data-scroll]').forEach(function (btn) {
-    btn.addEventListener('click', function () { scrollToId(btn.getAttribute('data-scroll')); });
+  window.addEventListener('scroll', () => {
+    const head = document.getElementById('siteHead');
+    if (window.scrollY > 60) {
+      head.classList.add('scrolled');
+    } else {
+      head.classList.remove('scrolled');
+    }
   });
 
-  /* FAQ accordion */
-  document.querySelectorAll('.faq__item').forEach(function (item) {
-    var q = item.querySelector('.faq__q');
-    q.addEventListener('click', function () {
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq__item.open').forEach(function (o) { o.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
-    });
+  // Automatically trigger view animations for preview
+  document.querySelectorAll('.reveal').forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add('in');
+    }, index * 40);
   });
-
-  /* Email capture — light client-side validation only.
-     The <form> POSTs directly to Buttondown (action set in the HTML).
-     We only intercept to nudge on an obviously-malformed address;
-     valid submissions go straight through to the real endpoint. */
-  function validEmail(v) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  }
-  function wireCapture(formId, inputId) {
-    var form = document.getElementById(formId);
-    var input = document.getElementById(inputId);
-    if (!form || !input) return;
-    form.addEventListener('submit', function (e) {
-      var v = (input.value || '').trim();
-      if (!validEmail(v)) {
-        e.preventDefault();
-        input.focus();
-        form.animate(
-          [{ transform: 'translateX(0)' }, { transform: 'translateX(-6px)' },
-           { transform: 'translateX(6px)' }, { transform: 'translateX(0)' }],
-          { duration: 320, easing: 'ease-in-out' }
-        );
-        input.style.color = '#E0917A';
-        setTimeout(function () { input.style.color = ''; }, 1200);
-      }
-      /* valid -> let the browser POST to Buttondown */
-    });
-  }
-  wireCapture('captureForm', 'email');
-  wireCapture('captureForm2', 'email2');
-})();
-
 </script>
+
 </body>
 </html>
