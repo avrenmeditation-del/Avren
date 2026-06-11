@@ -747,7 +747,7 @@ a { color: inherit; text-decoration: none; }
     <p class="hero__sub">A daily meditation practice built around a single tonal — one phonetic sound given to you, and no one else. No library to scroll. No streak to defend. Just you, a voice beside you, and a few quiet minutes.</p>
 
     <div class="capture" id="capture">
-      <form class="capture__form" id="captureForm" method="post" action="https://buttondown.com/api/emails/embed-subscribe/YOUR-BUTTONDOWN-USERNAME" novalidate="">
+      <form class="capture__form" id="captureForm" method="post" action="https://buttondown.com/api/emails/embed-subscribe/avren" novalidate="">
         <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" aria-label="Email address" required="">
         <input type="hidden" name="embed" value="1">
         <button type="submit" class="capture__btn">Request invitation</button>
@@ -950,14 +950,38 @@ a { color: inherit; text-decoration: none; }
     document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
   }
 
-  // Buttondown submit → show held state without leaving the page
+  // Buttondown submit → post via fetch (no-cors) so the page never
+  // navigates away, then show the held state in place.
   const form = document.getElementById('captureForm');
   if (form) {
-    form.addEventListener('submit', () => {
-      // let the POST proceed; reflect success state in the UI
-      setTimeout(() => {
-        document.getElementById('capture').classList.add('is-done');
-      }, 150);
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const emailInput = document.getElementById('email');
+      const email = emailInput ? emailInput.value.trim() : '';
+      if (!email) return;
+
+      const submitBtn = form.querySelector('.capture__btn');
+      if (submitBtn) submitBtn.disabled = true;
+
+      const body = new URLSearchParams();
+      body.set('email', email);
+      body.set('embed', '1');
+      body.set('tag', 'avren-landing');
+
+      fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      })
+        .catch(() => {
+          // no-cors responses are opaque — network errors are the only
+          // thing we can detect, and even those are rare for this endpoint.
+        })
+        .finally(() => {
+          document.getElementById('capture').classList.add('is-done');
+        });
     });
   }
 
