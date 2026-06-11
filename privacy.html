@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · Avren</title>
+<meta name="description" content="How Avren handles the email address you share when joining the pre-launch waitlist.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,300;1,400&family=Tenor+Sans&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --void-deep:   #050507;
+  --surface:     #121214;
+  --lunar:       #ECE6D7;
+  --lunar-dim:   #C7C0B0;
+  --secondary:   #938C7C;
+  --label:       #7C7567;
+  --hairline:        rgba(236,230,215,0.08);
+  --hairline-strong: rgba(236,230,215,0.16);
+  --accent:      #C4A882;
+  --font-display: "Tenor Sans", "Cormorant Garamond", serif;
+  --font-body:    "Hanken Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  --track-label: 0.24em;
+  --track-micro: 0.18em;
+  --gutter: clamp(22px, 6vw, 80px);
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body {
+  margin: 0;
+  background: var(--void-deep);
+  color: var(--lunar);
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 9000;
+  pointer-events: none; opacity: 0.025; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='4'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.7'/></svg>");
+}
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--lunar); }
+
+.site-head {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px var(--gutter);
+  background: color-mix(in srgb, var(--void-deep) 80%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid var(--hairline);
+}
+.brand {
+  display: flex; align-items: center; gap: 11px;
+  font-family: var(--font-display); font-size: 20px; letter-spacing: 0.18em;
+  color: var(--lunar); text-decoration: none;
+}
+.brand:hover { color: var(--lunar); }
+.brand .mark {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 14px var(--accent);
+}
+.back {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: var(--track-label); text-transform: uppercase;
+  color: var(--lunar-dim); text-decoration: none;
+  border: 0.5px solid var(--hairline-strong);
+  padding: 11px 19px; border-radius: 999px; transition: all 0.3s ease;
+}
+.back:hover { border-color: color-mix(in srgb, var(--accent) 60%, transparent); color: var(--lunar); }
+
+.doc {
+  max-width: 720px; margin: 0 auto;
+  padding: clamp(60px, 10vh, 110px) var(--gutter) 120px;
+}
+.doc__eyebrow {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: var(--track-label); text-transform: uppercase;
+  color: var(--accent); opacity: 0.85; margin-bottom: 20px;
+}
+.doc__title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: clamp(36px, 6vw, 58px); letter-spacing: 0.02em;
+  line-height: 1.1; margin: 0 0 16px;
+}
+.doc__meta {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: var(--track-micro); text-transform: uppercase;
+  color: var(--secondary); margin-bottom: 56px;
+}
+.doc h2 {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: clamp(22px, 3vw, 28px); letter-spacing: 0.02em;
+  margin: 48px 0 14px;
+}
+.doc p { color: var(--lunar-dim); margin: 0 0 18px; }
+.doc ul { color: var(--lunar-dim); margin: 0 0 18px; padding-left: 22px; }
+.doc li { margin-bottom: 10px; }
+.doc strong { color: var(--lunar); font-weight: 500; }
+.doc .intro { font-size: 17px; }
+
+.note {
+  border: 0.5px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border-radius: 16px;
+  padding: 24px 28px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 55%, transparent), transparent);
+  margin: 40px 0;
+}
+.note p { margin: 0; font-size: 14.5px; }
+
+.site-foot {
+  border-top: 0.5px solid var(--hairline);
+  padding: 48px var(--gutter);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+  max-width: 720px; margin: 0 auto;
+}
+.site-foot .legal {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: var(--track-micro); text-transform: uppercase; color: var(--secondary);
+}
+.site-foot nav { display: flex; gap: 26px; }
+.site-foot nav a {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: var(--track-micro); text-transform: uppercase;
+  color: var(--lunar-dim); text-decoration: none; transition: color 0.3s ease;
+}
+.site-foot nav a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <a href="/" class="brand"><span class="mark"></span>Avren</a>
+  <a href="/" class="back">Back to site</a>
+</header>
+
+<main class="doc">
+  <div class="doc__eyebrow">Avren</div>
+  <h1 class="doc__title">Privacy Policy</h1>
+  <div class="doc__meta">Effective June 11, 2026 · Pre-launch waitlist</div>
+
+  <p class="intro">This policy explains what happens with the information you share when you join the Avren waitlist on this site. It is short because we collect very little — and we intend to keep it that way.</p>
+
+  <div class="note">
+    <p>This policy covers only the Avren pre-launch website and its email waitlist. When the Avren app launches, a separate, fuller privacy policy will describe how the app itself handles your information.</p>
+  </div>
+
+  <h2>What we collect</h2>
+  <p>When you join the waitlist, you give us your <strong>email address</strong>. That's the only thing we ask you for.</p>
+  <p>Our email provider, Buttondown, also automatically records limited technical information when you sign up — most notably your <strong>IP address</strong>, which its system uses to check for fraudulent or spam sign-ups. If we later send waitlist emails, Buttondown may also record whether an email was opened or a link was clicked.</p>
+
+  <h2>Why we collect it</h2>
+  <p>We use your email address for one purpose: to send you occasional updates about Avren and to let you know when early access opens. We don't use it for anything else, and we won't send you unrelated marketing.</p>
+
+  <h2>Who it's shared with</h2>
+  <p>Your email address is stored and processed by <strong>Buttondown</strong>, the service that manages our waitlist, in accordance with <a href="https://buttondown.com/legal/privacy" target="_blank" rel="noopener">their privacy policy</a>. We do not sell your information, and we do not share it with anyone else except as needed to operate the waitlist or if required by law.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li><strong>Unsubscribe anytime.</strong> Every email we send includes an unsubscribe link. One click and you're removed.</li>
+    <li><strong>Request your data or its deletion.</strong> You can ask us for a copy of the information associated with your email, or ask us to delete it entirely, at any time.</li>
+  </ul>
+  <p>To make any of these requests, just email us at <a href="mailto:avren.meditation@gmail.com?subject=Privacy%20request">avren.meditation@gmail.com</a>.</p>
+
+  <h2>Children</h2>
+  <p>Avren is not directed to children, and the waitlist is intended for adults. We do not knowingly collect information from anyone under 18. If you believe a child has joined the waitlist, email us and we'll remove their information.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If we change how the waitlist handles your information, we'll update this page and revise the effective date above. Significant changes will be reflected here before they take effect.</p>
+
+  <h2>Contact</h2>
+  <p>Avren is based in New Jersey, United States. For any privacy questions or requests, contact us at <a href="mailto:avren.meditation@gmail.com?subject=Privacy%20request">avren.meditation@gmail.com</a>.</p>
+</main>
+
+<footer class="site-foot">
+  <span class="legal">&copy; 2026 Avren</span>
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+</footer>
+
+</body>
+</html>
