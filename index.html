@@ -355,6 +355,21 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-body); font-size: 15px; letter-spacing: 0.02em;
 }
 .capture__form input::placeholder { color: var(--secondary); }
+
+/* Override browser autofill highlight (Chrome/Safari force a light
+   background via internal styles — box-shadow is the only reliable
+   way to paint over it, with a long transition delay to suppress
+   the yellow/blue flash on autofill). */
+.capture__form input:-webkit-autofill,
+.capture__form input:-webkit-autofill:hover,
+.capture__form input:-webkit-autofill:focus,
+.capture__form input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--lunar);
+  -webkit-box-shadow: 0 0 0 1000px var(--surface) inset;
+  box-shadow: 0 0 0 1000px var(--surface) inset;
+  caret-color: var(--lunar);
+  transition: background-color 9999s ease-in-out 0s;
+}
 .capture__btn {
   flex: 0 0 auto;
   font-family: var(--font-mono); font-size: 11px;
